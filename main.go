@@ -38,6 +38,7 @@ func main() {
 				if _, err := f.Write([]byte("1")); err != nil {
 					log.Fatalf("failed writing to file on %s | %s", workfile, err.Error())
 				}
+				rw.Write([]byte("1"))
 			} else { // le fichier existe
 				data, err := os.ReadFile(workfile)
 				if err != nil {
@@ -51,6 +52,7 @@ func main() {
 				if err := os.WriteFile(workfile, []byte(strconv.Itoa(visits+1)), 0644); err != nil {
 					log.Fatalf("failed writing to file on %s | %s", workfile, err.Error())
 				}
+				rw.Write([]byte(strconv.Itoa(visits + 1)))
 			}
 		},
 	)
