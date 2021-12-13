@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	var router *mux.Router
+	router := mux.NewRouter()
 
 	router.HandleFunc(
 		"/",
